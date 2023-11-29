@@ -11,7 +11,9 @@ function addTask() {
         // create a new list item
  
         let li = document.createElement("li");
-        li.appendChild(document.createTextNode(taskInput.value));
+        let lab = document.createElement("label");
+        lab.innerHTML = taskInput.value;
+        li.appendChild(lab);
        
         let deleteButton = document.createElement("button");
         deleteButton.innerText = "Delete";
@@ -60,8 +62,19 @@ function completeTask(taskItem) {
     taskItem.removeChild(taskItem.querySelector("button")); // Complete button
  
     // move the task item to completed tasks
-    completedTasks.appendChild(taskItem);
+    completedTasks.appendChild(taskItem).textDecoration;
+
 }
+
+
+function clearTasks(){
+    let taskList = document.querySelectorAll("#completed-tasks li");
+    Array.from(taskList).forEach((li)=>
+    {
+        li.parentNode.removeChild(li);
+    });
+}
+ 
  
  
  
