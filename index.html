@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -13,6 +11,7 @@
     <div class="container">
         <div class="section1">
             <h1 id="title">♡ ˗ˋˏ TO DO LIST ˎˊ˗ ♡</h1>
+            <button onclick = "darkMode()" id="modeButton">Dark Mode</button>
             <p>
                 <label for="new-task">Add Tasks ≽^•⩊•^≼⁭ ⁭</label>
                 <input id="new-task" type="text">
@@ -32,9 +31,10 @@
             </ul>
         </div>
         <div class="section4">
-            <button id="clear", onclick = "clearTasks()">
-                <p>Clear</p>
-            </button>
+            <button id="clear", onclick = "clearTasks()">Clear</button>
+        </div>
+        <div class="section5">
+            <button id="logout", onclick="logout()">Logout</button>
         </div>
     </div>
     <script src="script.js"></script>

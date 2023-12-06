@@ -90,3 +90,46 @@ function deleteTask(taskItem){
     // move the task item to completed tasks
     incompleteTasks.removeChild(taskItem);
 }
+
+function darkMode(){
+    var element = document.body;
+    element.classList.toggle("dark-mode");
+    var elem = document.getElementById("modeButton");
+    if(elem.innerHTML == "Dark Mode") elem.innerHTML = "Light Mode";
+    else elem.innerHTML = "Dark Mode";
+
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    // This ensures that the script runs after the HTML document has been completely loaded
+
+    // Find the button element
+    document.getElementById("loginButton").addEventListener("click", function(event) {
+        authenticate();
+    });
+
+});
+
+
+
+function authenticate() {
+   
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+
+    if (username === "melissa" && password === "mezzina") {
+        alert("Authentication successful!");
+        redirectToAnotherPage();
+    } else {
+        alert("Authentication failed. Please check your credentials.");
+    }
+}
+
+
+function redirectToAnotherPage() {
+    window.location.href = 'http://127.0.0.1:5500/index.html';
+}
+
+function logout() {
+    window.location.href = 'http://127.0.0.1:5500/login.html';
+}
